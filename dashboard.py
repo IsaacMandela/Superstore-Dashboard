@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 from sqlalchemy import create_engine
@@ -158,5 +157,6 @@ with col12:
     fig.update_layout(
         title = 'Profit Analysis by Category and Sub-Category',
         margin=dict(t=50, l=25, r=25, b=25))
+
 
     st.plotly_chart(fig, use_container_width=True)
