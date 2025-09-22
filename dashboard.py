@@ -7,11 +7,13 @@ from sqlalchemy import create_engine
 from PIL import Image
 import datetime
 
-engine = create_engine("mysql+mysqlconnector://root:1234@localhost/superstore") 
-#Should hash out the password and don't upload on Github
+# engine = create_engine("mysql+mysqlconnector://root:1234@localhost/superstore") 
+# #Should hash out the password and don't upload on Github
 
-df = pd.read_sql_table('superstore', con=engine)
-#print(df.head())
+# df = pd.read_sql_table('superstore', con=engine)
+# #print(df.head())
+
+df = pd.read_csv('SampleSuperstore.csv')
 
 st.set_page_config(layout='wide')
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
@@ -157,6 +159,5 @@ with col12:
     fig.update_layout(
         title = 'Profit Analysis by Category and Sub-Category',
         margin=dict(t=50, l=25, r=25, b=25))
-
 
     st.plotly_chart(fig, use_container_width=True)
